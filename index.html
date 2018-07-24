@@ -14,10 +14,74 @@
 			<a class="campfire" href="https://youtu.be/7LSkfmCj8Jg" target="blank_"><img src="resource/campfire.png"></a>
 			<a class="billboard" href="https://imgur.com/a/uQrLt7f" target="blank_"><img src="resource/billboard.png"><p>MEMEMEMEME MEMEMEMEME MEMEMEMEME</p></a>
 			<a class="library" href="http://www.powersource.com/cherokee/burnett.html" target="blank_"><img src="resource/library.png"></a>
+			<div class="audioControls">
+				<img class="rewind" src="resource/audio_rewind.png">
+				<img class="play" src="resource/audio_play.png">
+				<img class="pause hidden" src="resource/audio_pause.png">
+				<img class="forward" src="resource/audio_forward.png">
+			</div>
+			<audio>
+				<source src="resource/authentic.mp3" type="audio/mpeg">
+				<source src="resource/THEMETAL.mp4" type="audio/mpeg">
+				<source src="resource/rock.mp3" type="audio/mpeg">
+				<source src="resource/anthem.mp3" type="audio/mpeg">
+			</audio>
 		</div>
 			<footer>
 				<h1>Trail of Tears</h1>
 			</footer>
 	</main>
+
+	<script type="text/javascript">//DON'T JUDGE ME I HAVEN'T FIGURE OUT HOW TO SEPARATE YET
+
+	let player = document.querySelector('audio');
+	let songs = Array.from(document.querySelectorAll('source'));
+	let track = 0;
+
+	let rewind = document.querySelector('.rewind');
+	let play = document.querySelector('.play');
+	let pause = document.querySelector('.pause');
+	let forward = document.querySelector('.forward');
+
+	let rewindEvent = rewind.addEventListener('click', rewindTrack);
+	let playEvent = play.addEventListener('click', playTrack);
+	let pauseEvent = pause.addEventListener('click', pauseTrack);
+	let forwardEvent = forward.addEventListener('click', skipTrack);
+
+	function playTrack() {
+		player.play();
+		if (!play.classList.contains('hidden')) {
+			play.classList.toggle('hidden');
+			pause.classList.toggle('hidden');
+		}
+	}
+
+	function pauseTrack() {
+		player.pause();
+		pause.classList.toggle('hidden');
+		play.classList.toggle('hidden');
+	}
+
+	function rewindTrack() {
+		if (track === 0)
+			track = songs.length - 1;
+		else
+			track--;
+
+		player.src = songs[track].src;
+		playTrack();
+	}
+
+	function skipTrack() {
+		if (track === songs.length - 1)
+			track = 0;
+		else
+			track++;
+
+		player.src = songs[track].src;
+		playTrack();
+	}
+
+	</script>
 </body>
 </html>
