@@ -17,65 +17,122 @@ main {
 	z-index: 1;
 }
 
+.trail img {
+	position: relative;
+	z-index: 3;
+}
+
 .library {
 	position: absolute;
 	bottom: 260px;
 	left: 15px;
-	animation-name: pulse;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
 }
+
+.library .shadow.A {
+	position: absolute;
+	top: 85px;
+	left: 3px;
+	height: 75px;
+	width: 60px;
+	-ms-transform: skewY(25deg); /* IE 9 */
+    -webkit-transform: skewY(25deg); /* Safari */
+    transform: skewY(25deg); /* Standard syntax */
+}
+
+.library .shadow.B {
+	position: absolute;
+	top: 60px;
+	left: 70px;
+	height: 75px;
+	width: 190px;
+	-ms-transform: skewY(-22deg); /* IE 9 */
+    -webkit-transform: skewY(-22deg); /* Safari */
+    transform: skewY(-22deg); /* Standard syntax */
+}
+
+.library .shadow.C {
+	position: absolute;
+	top: 35px;
+	left: 35px;
+	height: 7px;
+	width: 190px;
+	-ms-transform: skew(75deg, -18deg); /* IE 9 */
+    -webkit-transform: skew(75deg, -18deg); /* Safari */
+    transform: skew(75deg, -18deg); /* Standard syntax */
+}
+
+.library .shadow.D {
+	position: absolute;
+	bottom: 35px;
+	right: 60px;
+	height: 15px;
+	width: 70px;
+	-ms-transform: skew(75deg, -18deg); /* IE 9 */
+    -webkit-transform: skew(75deg, -18deg); /* Safari */
+    transform: skew(65deg, -25deg); /* Standard syntax */
+}
+
 
 .billboard {
 	position: absolute;
 	top: 115px;
 	right: 95px;
-	animation-name: pulse;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
 }
 
 .billboard p {
 	position: absolute;
 	top: 38px;
 	right: 10px;
-	-ms-transform: skewY(19deg); /* IE 9 */
-    -webkit-transform: skewY(19deg); /* Safari */
+	-ms-transform: skewY(20deg); /* IE 9 */
+    -webkit-transform: skewY(20deg); /* Safari */
     transform: skewY(20deg); /* Standard syntax */
     text-align: center;
     font: 24px/1.2 'impact', sans-serif;
     color: rebeccapurple;
+    z-index: 4;
+}
+
+.billboard .shadow.A {
+	position: absolute;
+	top: 30px;
+	left: 5px;
+	height: 100px;
+	width: 180px;
+	-ms-transform: skewY(20deg); /* IE 9 */
+    -webkit-transform: skewY(20deg); /* Safari */
+    transform: skewY(20deg); /* Standard syntax */
 }
 
 .campfire {
 	position: absolute;
 	top: 60px;
 	left: 215px;
-	animation-name: pulse;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
 }
 
 .campfire img {
 	height: 90px;
 }
 
-.library:hover, .billboard:hover, .campfire:hover {
-	background: hsla(0, 0%, 100%, 0.5);
-	box-shadow: 10px 10px 10px hsla(0, 0%, 100%, 0.3), 10px -10px 10px hsla(0, 0%, 100%, 0.3), -10px -10px 10px hsla(0, 0%, 100%, 0.3), -10px 10px 10px hsla(0, 0%, 100%, 0.3);
-	animation: none;
+.campfire .shadow.A {
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	height: 70px;
+	width: 40px;
 }
 
-@keyframes pulse {
-  0% {
-    background-color: hsla(0, 0%, 0%, 0);
-  }
-  50% {
-    background-color: hsla(240, 100%, 50%, 0.5);
-  }
-  100% {
-    background-color: hsla(0, 0%, 0%, 0);
-  }
+.campfire .shadow.B {
+	position: absolute;
+	top: 55px;
+	height: 30px;
+	width: 105px;
+}
+
+.shadow {
+	z-index: 2;
+	animation-name: pulseColor;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 }
 
 .audioControls {
@@ -118,6 +175,70 @@ main {
 	right: 25px;
 }
 
+.shadow.audio.A {
+	position: absolute;
+	bottom: 130px;
+	right: 350px;
+	height: 45px;
+	width: 45px;
+	border-radius: 15px;
+}
+
+.shadow.audio.B {
+	position: absolute;
+	bottom: 115px;
+	right: 315px;
+	height: 45px;
+	width: 45px;
+	border-radius: 15px;
+}
+
+.shadow.audio.C {
+	position: absolute;
+	bottom: 100px;
+	right: 275px;
+	height: 45px;
+	width: 45px;
+	border-radius: 15px;
+}
+
+.shadow.audio {
+	animation-name: pulse;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.library:hover .shadow, .billboard:hover .shadow, .campfire:hover .shadow, {
+	background: hsla(0, 0%, 100%, 0.5);
+	box-shadow: 10px 10px 10px hsla(0, 0%, 100%, 0.3), 10px -10px 10px hsla(0, 0%, 100%, 0.3), -10px -10px 10px hsla(0, 0%, 100%, 0.3), -10px 10px 10px hsla(0, 0%, 100%, 0.3);
+	animation: none;
+}
+
+@keyframes pulseColor {
+  0% {
+    background-color: hsla(0, 0%, 0%, 0);
+  }
+  50% {
+    background-color: hsla(240, 100%, 50%, 0.5);
+    box-shadow: 10px 10px 30px hsla(240, 100%, 50%, 0.3), 10px -10px 30px hsla(240, 100%, 50%, 0.3), -10px -10px 30px hsla(240, 100%, 50%, 0.3), -10px 10px 30px hsla(240, 100%, 50%, 0.3);
+  }
+  100% {
+    background-color: hsla(0, 0%, 0%, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: hsla(0, 0%, 0%, 0);
+  }
+  50% {
+    background-color: hsla(0, 0%, 100%, 0.3);
+    box-shadow: 10px 10px 30px hsla(0, 0%, 100%, 0.2), 10px -10px 30px hsla(0, 0%, 100%, 0.2), -10px -10px 30px hsla(0, 0%, 100%, 0.2), -10px 10px 30px hsla(0, 0%, 100%, 0.2);
+  }
+  100% {
+    background-color: hsla(0, 0%, 0%, 0);
+  }
+}
 footer {
 	background: url("resource/banner.png") center / 1000px no-repeat;
 	height: 300px;
