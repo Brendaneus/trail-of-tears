@@ -1,0 +1,32 @@
+main {
+	background: darkolivegreen;
+}
+
+.sky {
+	background: silver;
+	height: 200px;
+}
+
+.trail {
+	background: url("resource/trailBG.png");
+	height: 800px;
+	width: 800px;
+	position: relative;
+	top: -115px;
+	margin: auto;
+	z-index: 1;
+}
+
+footer {
+	background: url("resource/banner.png") center / 1000px no-repeat;
+	height: 300px;
+	position: relative;
+	top: -115px;
+	z-index: 2;
+}
+
+footer h1 {
+	padding-top: 60px;
+	text-align: center;
+	font-size: 100px;
+}
