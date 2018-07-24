@@ -90,6 +90,13 @@ main {
     font: 24px/1.2 'impact', sans-serif;
     color: rebeccapurple;
     z-index: 4;
+	animation-name: chroma;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+
+.billboard p:hover {
+	animation-duration: 0.5s;
 }
 
 .billboard .shadow.A {
@@ -239,6 +246,32 @@ main {
     background-color: hsla(0, 0%, 0%, 0);
   }
 }
+
+@keyframes chroma {
+  0% {
+    color: blue;
+  }
+  17% {
+    color: green;
+  }
+  33% {
+    color: yellow;
+  }
+  50% {
+    color: orange;
+  }
+  66% {
+    color: red;
+  }
+  83% {
+    color: purple;
+  }
+  100% {
+  	color: blue;
+  }
+
+}
+
 footer {
 	background: url("resource/banner.png") center / 1000px no-repeat;
 	height: 300px;
